@@ -13,4 +13,11 @@ pipeline {
             }
         }
     }
+    stages('Development'){
+        stage('Deploy Dev'){
+            steps{
+                sh 'kubectl apply -f deployment.yaml -n default'
+            }
+        }
+    }
 }
