@@ -13,10 +13,10 @@ pipeline {
             }
         }
     }
-    stages('Development'){
-        stage('Deploy Dev'){
+    stages('Development') {
+        stage('Deploy Dev') {
             steps{
-                sh 'sudo kubectl apply -f ./deployment.yaml -n default'
+            sh 'sudo kubectl apply -f ./deployment.yaml -n default'
             }
         }
     }
