@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    stages('Docker') {
+    stages('API') {
         stage('Build'){
             steps{
             sh 'sudo docker build . -t erwiinsaputra/testing:$(git rev-parse --short HEAD)'
@@ -12,12 +12,9 @@ pipeline {
             sh 'sudo docker push erwiinsaputra/testing:$(git rev-parse --short HEAD)'
             }
         }
-    }
-    stages('Development') {
         stage('Deploy Dev') {
             steps{
             sh 'sudo kubectl apply -f ./deployment.yaml -n default'
             }
         }
-    }
 }
