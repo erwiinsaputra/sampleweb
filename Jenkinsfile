@@ -17,4 +17,5 @@ pipeline {
             sh 'sudo kubectl apply -f ./deployment.yaml -n default'
             }
         }
+    }
 }
