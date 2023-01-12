@@ -2,8 +2,10 @@ pipeline {
     agent any
 
     stages('Docker') {
-        step('Login'){
+        stage('Login'){
+            step{
             sh '/home/script/dockerlogin.sh'
+            }
         }
     }
 }
