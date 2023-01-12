@@ -3,7 +3,7 @@ pipeline {
 
     stages('Docker') {
         stage('Login'){
-            step{
+            steps{
             sh '/home/script/dockerlogin.sh'
             }
         }
