@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy Dev') {
             steps{
-            sh 'sudo kubectl apply -f ./deployment.yaml -n default'
+            sh 'kubectl apply -f ./deployment.yaml -n default'
             }
         }
     }
